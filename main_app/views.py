@@ -49,7 +49,7 @@ def studentDashboard(request):
     courses = Course.objects.all()
     assignments = Assignment.objects.all()
     student = Student.objects.get(username=request.user)
-    return render(request, 'student-dashboard.html', {'student': student, 'courses': courses, 'assignments': assignments })
+    return render(request, 'student-dashboard.html', {'student': student, 'courses': courses, 'assignments': assignments})
 
 
 @login_required
@@ -140,6 +140,7 @@ class AssignmentCreate(LoginRequiredMixin, CreateView):
 class AssignmentUpdate(LoginRequiredMixin, UpdateView):
     model = Assignment
     fields = '__all__'
+    success_url = '/assignments/'
 
 
 class AssignmentDelete(LoginRequiredMixin, DeleteView):

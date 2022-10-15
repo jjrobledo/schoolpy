@@ -20,7 +20,7 @@ urlpatterns = [
          views.AssignmentUpdate.as_view(), name='assignment_update'),
     path('assignments/<int:pk>/delete/',
          views.AssignmentDelete.as_view(), name='assignment_delete'),
-    path('courses/<int:teacher_id>/', views.courses_index, name='course_index'),
+    path('courses/', views.courses_index, name='course_index'),
     path('courses/<int:course_id>/', views.courses_detail, name='course_detail'),
     path('courses/create/', views.CourseCreate.as_view(), name='course_create'),
     path('courses/<int:pk>/update/',
